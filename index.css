@@ -1,0 +1,193 @@
+.hero {
+    width: 100%;
+    height: 100vh;
+    background-image: url(background.png);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+.logo {
+    width: 100px;
+    cursor: pointer;
+    color: white;
+    font-size: 100px;
+}
+
+.navbar {
+    width: 85%;
+    height: 15%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+button {
+    color: #fbfcfd;
+    padding: 10px 25px;
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+    font-size: 25px;
+}
+button:hover {
+    color: lightskyblue;
+    background-color: white;
+
+}
+a {
+    color: white;
+}
+a:hover {
+    color: lightskyblue;
+}
+
+.content {
+    color: #fbfcfd;
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+h1 {
+    font-size: 80px;
+    margin: 10px 0 30px;
+    line-height: 80px;
+    transition: all 1s ease-out;  /* make the sentence to ease-out(to be small) when hover on it*/
+}
+h1:hover {
+    font-size: 40px;
+}
+
+small {
+    font-size: 35px;
+    transform-origin: bottom;
+    animation: smalls 5s ease-in-out infinite; 
+}
+small:hover {
+    animation-play-state: paused;
+}
+@keyframes smalls {
+    0%, 100% {
+        transform: scaleY(1.1);
+    }
+    50% {
+        transform: scaleY(0.5);
+    }
+}
+
+h2, h1 {
+    transform-origin: bottom;   /* set the origin for the transformation to the bottom of the element.*/
+    animation: waterEffect 5s ease-in-out infinite  /* declare keyframe animation named "waterEffect" to the selected elements. The animation will last for 5 seconds, have an ease-in-out timing function (for a smooth acceleration and deceleration), and repeat infinitely.*/
+}
+@keyframes waterEffect {
+    0%, 100% {
+        transform: scaleY(1.1);   /* it begins from (0%) and end (100%) of the animation, the elements will have a vertical scale (transform: scaleY()) of 1.1, making them slightly taller than their original size.*/
+    }
+    50% {
+        transform: scaleY(0.5);  /* at midpoint (50%) of the animation, the elements will have a vertical scale of 0.5, making them shorter than their original size*/
+    }
+}
+
+
+.side-bar {
+    width: 80px;
+    height: 100vh;
+    background: linear-gradient(#00545d, #000729);
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.menu {
+    display: block;
+    width: 25px;
+    margin: 40px auto 0;
+    cursor: pointer;
+}
+
+.social-links img, .use-links img {
+    width: 40px;
+    margin: 5px auto;
+    cursor: pointer;
+}
+
+.social-links {
+    width: 50px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.use-links {
+    width: 50px;
+    text-align: center;
+    position: absolute;
+    bottom: 30px;
+}
+
+.bubbles img {
+    width: 50px;
+    animation: bubble 7s linear infinite;   
+}
+
+.bubbles {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    bottom: -70px;
+}
+
+@keyframes bubble {      /* declares a keyframe animation named "bubble.*/
+    0% {
+        transform: translateY(0);        /* is the starting point of the animation, and translateY(0); which means no vertical translation (no movement along the Y-axis). */
+        opacity: 0;                      /* the element is completely transparent (invisible).*/
+    }
+    50% {                                /* at the halfway point of the animation, the opacity becomes 1, making the element fully visible. There is no explicit transformation defined for this keyframe, so the transform properties from the previous keyframe (0%) will still apply.*/
+        
+        opacity: 1;
+    }
+    70% {                               /* this keyframe maintains the opacity at 1, meaning the element stays fully visible. Like the previous keyframe, there is no explicit transformation, so the transform properties from the 50% keyframe still apply.*/
+        
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-80vh);  /* at the end of the animation, the element is transformed using transform: translateY(-80vh), this means it moves upward along the Y-axis by 80% of the viewport height. additionally, the opacity is set to 0, making the element completely transparent.*/
+        opacity: 0;
+    }
+}
+
+/* let buttons to move at different times, and change the size of some bubbles*/
+.bubbles img:nth-child(1) {
+    animation-delay: 2s;
+}
+.bubbles img:nth-child(2) {
+    animation-delay: 1s;
+}
+.bubbles img:nth-child(3) {
+    animation-delay: 3s;
+    width: 25px;
+}
+.bubbles img:nth-child(4) {
+    animation-delay: 4.5s;
+}
+.bubbles img:nth-child(5) {
+    animation-delay: 3s;
+}
+.bubbles img:nth-child(6) {
+    animation-delay: 6s;
+    width: 20px;
+}
+.bubbles img:nth-child(7) {
+    animation-delay: 7s;
+    width: 25px;
+}
+
